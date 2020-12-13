@@ -1,4 +1,5 @@
 from src.client import client
+import sys
 
 cli = client.Client('dns.chat.debem.dev', [lambda msg: msg_list.insert(tk.END, msg)])
 
@@ -13,7 +14,7 @@ def send(event = None):
 
 def on_closing():
     send_msg('[quit]')
-    quit()
+    sys.exit(0)
 
 root = tk.Tk()
 root.title('oi mo')
